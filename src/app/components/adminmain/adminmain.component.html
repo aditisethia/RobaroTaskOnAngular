@@ -1,0 +1,111 @@
+<div class="bootsrap-wrapper">
+    <div class="container">
+          <div class="col-md-3">
+             <!-- <app-staff-sidebar></app-staff-sidebar> -->
+          </div>
+          <div class="col-md-12">
+            <router-outlet></router-outlet>
+            <div class="state-overview">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-12">
+                        <div class="info-box bg-b-yellow">
+                            <span class="info-box-icon push-botton">
+                                <img class="style"
+                                    src="https://img.freepik.com/premium-photo/teacher-woman-avatar-icon-illustration-vector-style_131965-796.jpg"
+                                    alt="">
+                            </span>
+                            <div class="info-box-content">
+                                <span class="info-box-text"> Worker</span>
+                                <br>
+                                <span class="info-box-number">{{ totalWorkers$ | async }}</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-12">
+                        <div class="info-box bg-b-blue">
+                            <span class="info-box-icon push-botton">
+                                <img class="style"
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiCCPog3gWKsMe-Gt7iOK6gzHLzz2Jo49L7A&usqp=CAU"
+                                    alt="">
+                            </span>
+                            <div class="info-box-content">
+                                <span class="info-box-text"> Supervisor</span>
+                                <br>
+                                <span class="info-box-number">{{ totalSupervisors$ | async }}</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-12">
+                        <div class="info-box bg-b-pink">
+                            <span class="info-box-icon push-botton">
+                                <img class="style"
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVDWfwbOuPMAtIxM6iCqdEq5Fcy2-oTSFezg&usqp=CAU"
+                                    alt="">
+                            </span>
+                            <div class="info-box-content">
+                                <span class="info-box-text"> User</span>
+                                <br>
+                                <span class="info-box-number">{{ totalUsers$ | async }}</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="card card-box">
+                        <div class="card-head">
+                            <header>
+                                <h1>User List</h1>
+                            </header>
+                            <div class="card-body">
+                                <div class="table-wrap">
+                                    <div class="table-responsive">
+                                        <table class="table display product-overview mb-30">
+                                            <thead>
+                                                <th>
+                                                    <h3>User ID</h3>
+                                                </th>
+                                                <th>
+                                                    <h3>Name</h3>
+                                                </th>
+                                                <th>
+                                                    <h3>Email</h3>
+                                                </th>
+                                                <th>
+                                                    <h3>Role</h3>
+                                                </th>
+                                                <th>
+                                                    <h3>Phone</h3>
+                                                </th>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let user of users">
+                                                    <td>{{ user.userId }}</td>
+                                                    <td>{{ user.name }}</td>
+                                                    <td>{{ user.email }}</td>
+                                                    <td>{{ user.role }}</td>
+                                                    <td>{{ user.phone }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+ 

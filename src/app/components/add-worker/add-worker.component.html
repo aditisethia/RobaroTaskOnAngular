@@ -1,0 +1,45 @@
+<div class="container small-container">
+  <div class="state-overview">
+    <form [formGroup]="newWorker" (submit)="onSubmit()">
+      <h1>Add a Worker</h1>
+      <!-- <p>Please add the worker</p> -->
+      
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" id="email" formControlName="email">
+      <div *ngIf="newWorker.get('email')?.invalid && (newWorker.get('email')?.dirty || newWorker.get('email')?.touched)">
+        <small class="text-danger" *ngIf="newWorker.get('email')?.errors?.['required']">Email is required</small>
+        <small class="text-danger" *ngIf="newWorker.get('email')?.errors?.['email']">Invalid email</small>
+        <small class="text-danger" *ngIf="newWorker.get('email')?.errors?.['pattern']">Email should be of the format example@gmail.com</small>
+      </div>
+
+      <label for="name"><b>User Name</b></label>
+      <input type="text" placeholder="Enter User Name" name="name" id="name" formControlName="userName">
+      <div *ngIf="newWorker.get('userName')?.invalid && (newWorker.get('userName')?.dirty || newWorker.get('userName')?.touched)">
+        <small class="text-danger" *ngIf="newWorker.get('userName')?.errors?.['required']">User name is required</small>
+        <small class="text-danger" *ngIf="newWorker.get('userName')?.errors?.['minlength']">User name should be at least 3 characters</small>
+        <small class="text-danger" *ngIf="newWorker.get('userName')?.errors?.['maxlength']">User name should be at most 10 characters</small>
+      </div>
+
+      <label for="phone"><b>Phone</b></label>
+      <input type="text" placeholder="Enter Phone" name="phone" id="phone" formControlName="phone">
+      <div *ngIf="newWorker.get('phone')?.invalid && (newWorker.get('phone')?.dirty || newWorker.get('phone')?.touched)">
+        <small class="text-danger" *ngIf="newWorker.get('phone')?.errors?.['required']">Phone number is required</small>
+        <small class="text-danger" *ngIf="newWorker.get('phone')?.errors?.['pattern']">Phone number should be a 10-digit number</small>
+      </div>
+
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" id="password" formControlName="password">
+      <div *ngIf="newWorker.get('password')?.invalid && (newWorker.get('password')?.dirty || newWorker.get('password')?.touched)">
+        <small class="text-danger" *ngIf="newWorker.get('password')?.errors?.['required']">Password is required</small>
+        <small class="text-danger" *ngIf="newWorker.get('password')?.errors?.['pattern']">Password must contain at least one number, one uppercase and a lowercase letter, and at least 8 characters</small>
+      </div>
+
+      <label for="userId"><b>User ID</b></label>
+      <input type="text" placeholder="Enter User ID" name="userId" id="userId" formControlName="userId">
+      <div *ngIf="newWorker.get('userId')?.invalid && (newWorker.get('userId')?.dirty || newWorker.get('userId')?.touched)">
+        <small class="text-danger" *ngIf="newWorker.get('userId')?.errors?.['required']">User ID is required</small>
+      </div>
+      <button type="submit" class="registerbtn" [disabled]="newWorker.invalid">Add Worker</button>
+    </form>
+  </div> 
+</div>

@@ -1,0 +1,31 @@
+{
+    "users":[
+        {
+            "userId" : 1,
+            "userName" : "Admin",
+            "email" : "admin@gmail.com",
+            "phone" : "7828847080",
+            "role" : "ADMIN",
+            "images":[],
+            "password":"aA1"
+        }
+        ,{
+            "userId" : 2,
+            "userName" : "ramu",
+            "email" : "worker@gmail.com",
+            "phone" : "9898989898",
+            "role" : "WORKER",
+            "images":[],
+            "password":"aA1"
+        },
+        {
+            "userId" : 3,
+            "name" : "shyamu",
+            "email" : "supervisor@gmail.com",
+            "phone" : "989112233",
+            "role" : "SUPERVISOR",
+            "password":"aA1",
+            "images":[]
+        }
+    ]
+}

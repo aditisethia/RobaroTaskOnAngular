@@ -1,0 +1,72 @@
+<!-- <div class="main">  
+     <input type="checkbox" id="chk" aria-hidden="true"> 
+
+    <div class="signup">
+        <div class="center">
+            <h1>Login Here ...</h1>
+        </div>
+       
+        <form [formGroup]="loginData" (ngSubmit)="login(loginData)">
+            <div class="form-group">
+                <label for="exampleInputEmail1" class="login_heading">Email Id</label>
+                <div class="position-relative mb_30">
+                    <i class="fi fi-rr-envelope input_icons"></i> 
+                    <input type="email" class="form-control profile_input" placeholder="Enter your email" formControlName="email"><br>
+                    <div *ngIf="email">
+                        <small *ngIf="email.errors?.['required'] && email.touched" class="text-danger">This Field Is Required</small>
+                        <small *ngIf="email.errors?.['email'] && email.dirty" class="text-danger">Invalid email</small>
+                        <small *ngIf="email.errors?.['pattern'] && email.dirty" class="text-danger">Email format is wrong</small>
+                    </div>
+                </div>
+                <label for="exampleInputEmail1" class="login_heading">Password</label>
+                <div class="position-relative mb_12">
+                     <i class="fi fi-rr-lock input_icons"></i> 
+                    <input type="password" class="form-control profile_input px_41" placeholder="Enter your password" formControlName="password">
+                    <br>
+                    <div *ngIf="password">
+                        <small class="text-danger" *ngIf="password.errors?.['required'] && password.touched">This Field Is Required</small>
+                        <small class="text-danger" *ngIf="password.errors?.['pattern']">Password must contain at least one number, one uppercase and a lowercase letter and at least 8 characters</small>
+                    </div>
+                     <i class="fi fi-rr-eye eye_icon2 lh-1"></i> 
+                </div>
+            </div>
+            <button class="btn login_btn fs-15 fw-700 w-100 m-0" [disabled]="loginData.invalid">Login</button>
+        </form>
+    </div>
+</div> -->
+
+
+
+
+
+<div class="container">
+<div class="main">  	
+    <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup">
+            <form [formGroup]="loginData" (ngSubmit)="login(loginData)">
+                <div class="form-group">
+                <label for="chk" aria-hidden="true">LOGIN</label>
+                <input type="email" class="form-control profile_input" placeholder="Enter your email" formControlName="email">
+                <div *ngIf="email">
+                    <small *ngIf="email.errors?.['required'] && email.touched" class="text-danger">This Field Is Required</small>
+                    <small *ngIf="email.errors?.['email'] && email.dirty" class="text-danger">Invalid email</small>
+                    <small *ngIf="email.errors?.['pattern'] && email.dirty" class="text-danger">Email format is wrong</small>
+                </div>
+                <input type="password" class="form-control profile_input px_41" placeholder="Enter your password" formControlName="password">
+                <div *ngIf="password">
+                    <small class="text-danger" *ngIf="password.errors?.['required'] && password.touched">This Field Is Required</small>
+                    <small class="text-danger" *ngIf="password.errors?.['pattern']">Password must contain at least one number, one uppercase and a lowercase letter and at least 8 characters</small>
+                </div>
+                <button [disabled]="loginData.invalid">Login</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="login">
+            <form>
+                <label f aria-hidden="true">Login</label>
+            </form>
+        </div>
+</div>
+</div>

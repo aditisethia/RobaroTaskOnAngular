@@ -1,0 +1,45 @@
+<div class="container small-container">
+  <div class="state-overview">
+    <form [formGroup]="newSuper" (submit)="onSubmit()">
+      <h2>Add a SuperVisor</h2>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" id="email" formControlName="email">
+      <div *ngIf="newSuper.get('email')?.invalid && (newSuper.get('email')?.dirty || newSuper.get('email')?.touched)">
+        <small class="text-danger" *ngIf="newSuper.get('email')?.errors?.['required']">Email is required</small>
+        <small class="text-danger" *ngIf="newSuper.get('email')?.errors?.['email']">Invalid email</small>
+        <small class="text-danger" *ngIf="newSuper.get('email')?.errors?.['pattern']">Email should be of the format example@gmail.com</small>
+      </div>
+
+      <label for="name"><b>User Name</b></label>
+      <input type="text" placeholder="Enter User Name" name="name" id="name" formControlName="name">
+      <div *ngIf="newSuper.get('name')?.invalid && (newSuper.get('name')?.dirty || newSuper.get('name')?.touched)">
+        <small class="text-danger" *ngIf="newSuper.get('name')?.errors?.['required']">User name is required</small>
+        <small class="text-danger" *ngIf="newSuper.get('name')?.errors?.['minlength']">User name should be at least 3 characters</small>
+        <small class="text-danger" *ngIf="newSuper.get('name')?.errors?.['maxlength']">User name should be at most 10 characters</small>
+      </div>
+
+      <label for="phone"><b>Phone</b></label>
+      <input type="text" placeholder="Enter Phone" name="phone" id="phone" formControlName="phone">
+      <div *ngIf="newSuper.get('phone')?.invalid && (newSuper.get('phone')?.dirty || newSuper.get('phone')?.touched)">
+        <small class="text-danger" *ngIf="newSuper.get('phone')?.errors?.['required']">Phone number is required</small>
+        <small class="text-danger" *ngIf="newSuper.get('phone')?.errors?.['pattern']">Phone number should be a 10-digit number</small>
+      </div>
+
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" id="password" formControlName="password">
+      <div *ngIf="newSuper.get('password')?.invalid && (newSuper.get('password')?.dirty || newSuper.get('password')?.touched)">
+        <small class="text-danger" *ngIf="newSuper.get('password')?.errors?.['required']">Password is required</small>
+        <small class="text-danger" *ngIf="newSuper.get('password')?.errors?.['pattern']">Password must contain at least one number, one uppercase and a lowercase letter, and at least 8 characters</small>
+      </div>
+
+      <label for="userId"><b>User ID</b></label>
+      <input type="text" placeholder="Enter User ID" name="userId" id="userId" formControlName="userId">
+      <div *ngIf="newSuper.get('userId')?.invalid && (newSuper.get('userId')?.dirty || newSuper.get('userId')?.touched)">
+        <small class="text-danger" *ngIf="newSuper.get('userId')?.errors?.['required']">User ID is required</small>
+      </div>
+
+      <button type="submit" class="registerbtn" [disabled]="newSuper.invalid">Add Super</button>
+    </form>
+  </div> 
+</div>
